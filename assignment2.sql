@@ -71,7 +71,7 @@ where department = 'IT'
 
 -- 9. Display the minimum and maximum experience of employees.
 
-select max(EXPERIENCE) maximum,
+select max(EXPERIENCE) as maximum,
 min(EXPERIENCE) as minimum
 from emp 
 
