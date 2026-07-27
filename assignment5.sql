@@ -29,6 +29,8 @@ create table student
   DEPARTMENTID INT 
 )
 
+  select * from student
+
 -- 4.	Add a new column to the Student table to store the student's email address. 
 
 alter table student
@@ -41,7 +43,7 @@ ALTER COLUMN EMAIL VARCHAR(50)
 
 -- 6.	Rename the newly added email column to something more suitable. 
 
-Sp-rename 'student.email' ,'emailid'
+Sp_rename 'student.email' ,'emailid'
 
 -- 7.	Drop the email column from the Student table. 
 
@@ -193,7 +195,8 @@ add constraint fk_department
 foreign key (DEPARTMENTID)
 references department(DEPARTMENTID)
 
-
+sp_help department
+  
 -- 31.	Remove the primary key from the Department table and then reapply it. 
 
 alter table department
@@ -399,7 +402,7 @@ where SNAME like 'S%'
 
 select *
 from student
-where  like '%n'
+where sname like '%n'
 
 
 -- 59. Display all students whose name contains the substring 'an' anywhere in it.
