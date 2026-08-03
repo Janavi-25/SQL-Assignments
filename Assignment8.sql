@@ -90,7 +90,11 @@ train_id int,
 travel_date date not null,
 class varchar(50) check(class in ('Sleeper', 'AC1', 'AC2', 'AC3')),
 fare  DECIMAL(10,2) check(fare >= 0),
-status varchar(50) check(status in ('Confirmed', 'Waiting', 'Cancelled')))
+status varchar(50) check(status in ('Confirmed', 'Waiting', 'Cancelled'))
+Foreign key (passenger_id)
+references passengers(passenger_id),
+foreign key (train_id)
+references trains(train_id))
 
 INSERT INTO Reservations VALUES
 (201, 1, 101, '2025-09-01', 'Sleeper', 500, 'Confirmed'),
