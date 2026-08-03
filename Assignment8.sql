@@ -84,7 +84,7 @@ INSERT INTO Passengers VALUES
 (30, 'Anita', 47, 'F', 'Trivandrum')
 
 create table reservations
-(res_id int,
+(res_id int PRIMARY KEY,
 passenger_ID Int,
 train_id int,
 travel_date date not null,
